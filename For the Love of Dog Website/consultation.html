@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Consultation Request | For the Love of Dog</title>
+
+<meta name="description"
+content="Request a dog training consultation with Claire Borchert. Virtual training nationwide and in-person training in Lynchburg, Virginia.">
+
+<style>
+
+:root{
+--teal:#0a7479;
+--teal-dark:#07585c;
+--teal-soft:#eaf6f5;
+--cream:#fffdf8;
+--ink:#243233;
+--line:#d8e8e6;
+--shadow:0 10px 30px rgba(17,77,78,.08);
+}
+
+*{
+box-sizing:border-box;
+}
+
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:var(--cream);
+color:var(--ink);
+line-height:1.7;
+}
+
+header{
+background:white;
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+position:sticky;
+top:0;
+z-index:100;
+}
+
+nav{
+max-width:1100px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px;
+}
+
+.logo{
+font-weight:bold;
+font-size:1.2rem;
+color:var(--teal-dark);
+}
+
+nav a{
+text-decoration:none;
+color:var(--teal-dark);
+font-weight:bold;
+margin-left:18px;
+}
+
+.hero{
+text-align:center;
+padding:60px 20px;
+background:linear-gradient(to bottom,#f3fbfa,#ffffff);
+}
+
+.hero h1{
+font-size:3rem;
+color:var(--teal-dark);
+margin-bottom:10px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+padding:50px 20px;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:var(--shadow);
+border:1px solid var(--line);
+}
+
+label{
+display:block;
+margin-top:20px;
+margin-bottom:6px;
+font-weight:bold;
+}
+
+input,
+select,
+textarea{
+width:100%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:1rem;
+}
+
+textarea{
+min-height:120px;
+resize:vertical;
+}
+
+.radio-group{
+margin-top:10px;
+}
+
+.radio-group label{
+display:inline-block;
+margin-right:20px;
+font-weight:normal;
+}
+
+.submit-button{
+background:var(--teal);
+color:white;
+border:none;
+padding:15px 28px;
+margin-top:30px;
+border-radius:30px;
+font-size:1rem;
+font-weight:bold;
+cursor:pointer;
+}
+
+.highlight{
+background:var(--teal-soft);
+padding:25px;
+border-left:5px solid var(--teal);
+border-radius:10px;
+margin-bottom:30px;
+}
+
+footer{
+background:var(--teal-dark);
+color:white;
+text-align:center;
+padding:40px 20px;
+margin-top:50px;
+}
+
+@media(max-width:800px){
+
+.hero h1{
+font-size:2.2rem;
+}
+
+nav{
+flex-direction:column;
+gap:10px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">For the Love of Dog</div>
+
+<div>
+index.htmlHome</a>
+<a href="about.html">About Claire</a>
+<a href="services.html">Services & Pricing</a>
+faq.htmlFAQ & Policies</a>
+<a href="consultation.html">Consultation</a>
+</div>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Request a Consultation</h1>
+
+<p>
+Tell me a little about you and your dog so we can determine
+the best next steps together.
+</p>
+
+</section>
+
+<div class="container">
+
+<div class="highlight">
+
+<strong>Not sure where to start?</strong><br>
+
+The Virtual Training Consultation is the perfect first step.
+We'll discuss your goals, concerns, and create a plan that
+fits your dog and your family.
+
+</div>
+
+<div class="card">
+
+<form action="mailto:clairefortheloveofdog@gmail.com"
+method="post"
+enctype="text/plain">
+
+<label for="name">Your Name</label>
+<input type="text" id="name" name="Name" required>
+
+<label for="email">Email Address</label>
+<input type="email" id="email" name="Email" required>
+
+<label for="phone">Phone Number</label>
+<input type="tel" id="phone" name="Phone">
+
+<label for="dogname">Dog's Name</label>
+<input type="text" id="dogname" name="Dog Name" required>
+
+<label for="breed">Breed or Mix</label>
+<input type="text" id="breed" name="Breed">
+
+<label for="age">Dog's Age</label>
+<input type="text" id="age" name="Age">
+
+<label for="concern">Main Training Concern</label>
+
+<select id="concern" name="Main Concern">
+
+<option value="">Select One</option>
+
+<option>Puppy Training</option>
+<option>House Training</option>
+<option>Jumping</option>
+<option>Leash Pulling</option>
+<option>Recall</option>
+<option>Barking</option>
+<option>Fear / Anxiety</option>
+<option>Reactivity</option>
+<option>Separation Concerns</option>
+<option>Confidence Building</option>
+<option>General Manners</option>
+<option>Behavior Support</option>
+<option>Other</option>
+
+</select>
+
+<label for="goals">
+What are your top goals for your dog?
+</label>
+
+<textarea
+id="goals"
+name="Goals"
+placeholder="Tell me about the changes you'd like to see and what success looks like for you."></textarea>
+
+<label>
+Has your dog ever bitten a person?
+</label>
+
+<div class="radio-group">
+
+<label>
+<input type="radio" name="Bitten Person" value="Yes">
+Yes
+</label>
+
+<label>
+<input type="radio" name="Bitten Person" value="No">
+No
+</label>
+
+</div>
+
+<label>
+Has your dog ever bitten another animal?
+</label>
+
+<div class="radio-group">
+
+<label>
+<input type="radio" name="Bitten Animal" value="Yes">
+Yes
+</label>
+
+<label>
+<input type="radio" name="Bitten Animal" value="No">
+No
+</label>
+
+</div>
+
+<label>
+Does your dog have any medical conditions I should know about?
+</label>
+
+<div class="radio-group">
+
+<label>
+<input type="radio" name="Medical Conditions" value="Yes">
+Yes
+</label>
+
+<label>
+<input type="radio" name="Medical Conditions" value="No">
+No
+</label>
+
+</div>
+
+<label for="additional">
+Anything else you'd like me to know?
+</label>
+
+<textarea
+id="additional"
+name="Additional Information"></textarea>
+
+<button type="submit" class="submit-button">
+Request Consultation
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<footer>
+
+<p><strong>For the Love of Dog</strong></p>
+
+<p>
+Virtual Training Nationwide • In-Person Training in Lynchburg, Virginia
+</p>
+
+<p>
+clairefortheloveofdog@gmail.com
+</p>
+
+</footer>
+
+</body>
+</html>
