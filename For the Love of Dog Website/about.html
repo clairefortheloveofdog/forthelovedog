@@ -81,12 +81,20 @@ padding:50px 20px;
 }
 
 .profile{
-display:grid;
-grid-template-columns:400px 1fr;
+display:flex;
 gap:40px;
-align-items:start;
+align-items:flex-start;
+flex-wrap:wrap;
 }
 
+.profile > div:first-child{
+flex:0 0 400px;
+}
+ 
+.profile > div:last-child{
+flex:1;
+min-width:300px;
+}
 .profile img{
 width:100%;
 border-radius:24px;
