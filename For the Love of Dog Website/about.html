@@ -15,8 +15,8 @@ content="Meet Claire Borchert, positive reinforcement dog trainer, rescue advoca
 --teal:#0a7479;
 --teal-dark:#07585c;
 --teal-soft:#eaf6f5;
---ink:#243233;
 --cream:#fffdf8;
+--ink:#243233;
 --line:#d8e8e6;
 --shadow:0 10px 30px rgba(17,77,78,.08);
 }
@@ -28,9 +28,9 @@ box-sizing:border-box;
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
+line-height:1.7;
 background:var(--cream);
 color:var(--ink);
-line-height:1.8;
 }
 
 header{
@@ -38,6 +38,7 @@ background:white;
 box-shadow:0 2px 8px rgba(0,0,0,.08);
 position:sticky;
 top:0;
+z-index:100;
 }
 
 nav{
@@ -49,6 +50,12 @@ align-items:center;
 padding:18px;
 }
 
+.logo{
+font-weight:bold;
+font-size:1.2rem;
+color:var(--teal-dark);
+}
+
 nav a{
 text-decoration:none;
 color:var(--teal-dark);
@@ -56,16 +63,10 @@ font-weight:bold;
 margin-left:18px;
 }
 
-.logo{
-font-size:1.2rem;
-font-weight:bold;
-color:var(--teal-dark);
-}
-
 .hero{
-background:linear-gradient(to bottom,#f3fbfa,#ffffff);
-padding:60px 20px;
+padding:70px 20px;
 text-align:center;
+background:linear-gradient(to bottom,#f3fbfa,#ffffff);
 }
 
 .hero h1{
