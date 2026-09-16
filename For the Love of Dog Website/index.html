@@ -63,6 +63,21 @@ font-size:3rem;
 color:#07585c;
 }
 
+.header-brand{
+display:flex;
+align-items:center;
+gap:15px;
+}
+ 
+@media (max-width:768px){
+ 
+.header-brand{
+flex-direction:column;
+text-align:center;
+}
+ 
+}
+  
 .button{
 display:inline-block;
 padding:12px 20px;
@@ -122,20 +137,7 @@ color:white;
 <nav>
   
 <div class="header-brand">
-.header-brand{
-display:flex;
-align-items:center;
-gap:15px;
-}
- 
-@media (max-width:768px){
- 
-.header-brand{
-flex-direction:column;
-text-align:center;
-}
- 
-}
+
 <img src="images/for-the-love-of-dog-logo.png"
 alt="For the Love of Dog Logo"
 style="height:80px; width:auto;">
