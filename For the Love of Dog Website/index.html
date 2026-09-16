@@ -9,136 +9,158 @@
 content="Positive, science-based dog training with Claire Borchert. Virtual training nationwide and in-person services in Lynchburg, Virginia.">
 
 <style>
-@media (max-width: 768px) {
- 
-nav{
-display:flex;
-flex-direction:column;
-align-items:center;
-text-align:center;
-gap:15px;
-}
- 
-nav > div:last-child{
-width:100%;
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-margin-top:10px;
-}
- 
-nav a{
-display:inline-block;
-margin:5px 8px;
-}
- 
+
+:root{
+--teal:#0a7479;
+--teal-dark:#07585c;
+--teal-soft:#eaf6f5;
+--cream:#fffdf8;
+--ink:#243233;
+--line:#d8e8e6;
+--shadow:0 10px 30px rgba(17,77,78,.08);
 }
 
-nav span{
-font-size:24px !important;
-white-space:normal;
+*{
+box-sizing:border-box;
 }
- 
-}
-``
+
 body{
-font-family:Arial,sans-serif;
 margin:0;
-line-height:1.6;
-background:#fffdf8;
-color:#243233;
+font-family:Arial, Helvetica, sans-serif;
+line-height:1.7;
+background:var(--cream);
+color:var(--ink);
 }
 
 header{
 background:white;
-padding:15px;
-box-shadow:0 1px 5px rgba(0,0,0,.1);
+box-shadow:0 2px 8px rgba(0,0,0,.08);
+position:sticky;
+top:0;
+z-index:100;
 }
 
 nav{
+max-width:1100px;
+margin:auto;
 display:flex;
 justify-content:space-between;
 align-items:center;
-max-width:1100px;
-margin:auto;
+padding:18px;
+}
+
+.logo{
+font-weight:bold;
+font-size:1.2rem;
+color:var(--teal-dark);
 }
 
 nav a{
 text-decoration:none;
-color:#07585c;
+color:var(--teal-dark);
 font-weight:bold;
-margin-left:15px;
+margin-left:18px;
 }
 
 .hero{
-padding:80px 20px;
-background:#eaf6f5;
+padding:70px 20px;
 text-align:center;
+background:linear-gradient(to bottom,#f3fbfa,#ffffff);
 }
 
 .hero h1{
 font-size:3rem;
-color:#07585c;
-}
-
-.header-brand{
-display:flex;
-align-items:center;
-gap:15px;
-}
- 
-}
-  
-.button{
-display:inline-block;
-padding:12px 20px;
-background:#0a7479;
-color:white;
-border-radius:30px;
-text-decoration:none;
-margin:10px;
+color:var(--teal-dark);
+margin-bottom:10px;
 }
 
 .container{
 max-width:1100px;
 margin:auto;
+padding:50px 20px;
+}
+
+.service-card{
+background:white;
+padding:35px;
+margin-bottom:30px;
+border-radius:20px;
+box-shadow:var(--shadow);
+border:1px solid var(--line);
+}
+
+.service-card h2{
+color:var(--teal-dark);
+margin-top:0;
+}
+
+.price{
+font-size:1.4rem;
+font-weight:bold;
+color:var(--teal);
+margin-bottom:20px;
+}
+
+.button{
+display:inline-block;
+padding:14px 24px;
+background:var(--teal);
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-weight:bold;
+margin-top:20px;
+}
+
+ul{
+padding-left:20px;
+}
+
+.highlight{
+background:var(--teal-soft);
+padding:30px;
+border-left:5px solid var(--teal);
+border-radius:10px;
+margin:40px 0;
+}
+
+.cta{
+text-align:center;
+background:var(--teal);
+color:white;
 padding:60px 20px;
 }
 
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+.cta h2{
+color:white;
+margin-top:0;
 }
 
-.card{
+.cta .button{
 background:white;
-padding:25px;
-border-radius:15px;
-box-shadow:0 4px 12px rgba(0,0,0,.08);
-}
-
-.quote{
-background:#f0faf9;
-padding:30px;
-font-size:1.5rem;
-font-style:italic;
-border-left:5px solid #0a7479;
-}
-
-.photo{
-max-width:450px;
-margin:auto;
-display:block;
-border-radius:20px;
+color:var(--teal-dark);
 }
 
 footer{
-text-align:center;
-padding:40px;
-background:#07585c;
+background:var(--teal-dark);
 color:white;
+text-align:center;
+padding:40px 20px;
 }
+
+@media(max-width:800px){
+
+.hero h1{
+font-size:2.3rem;
+}
+
+nav{
+flex-direction:column;
+gap:10px;
+}
+
+}
+
 </style>
 </head>
 
