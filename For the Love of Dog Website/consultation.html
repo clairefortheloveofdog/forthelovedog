@@ -221,9 +221,11 @@ fits your dog and your family.
 
 <div class="card">
 
-<form action="mailto:clairefortheloveofdog@gmail.com"
-method="post"
-enctype="text/plain">
+<form name="consultation" method="POST">
+ 
+<input type="hidden"
+name="form-name"
+value="consultation">
 
 <label for="name">Your Name</label>
 <input type="text" id="name" name="Name" required>
