@@ -1,7 +1,8 @@
 export async function onRequestPost(context) {
 const formData = await context.request.formData();
  
-const response = await fetch("https://api.resend.com/emails", {
+const response = await fetch("https://api.resend.com/emails",
+{
 method: "POST",
 headers: {
 "Authorization": `Bearer ${context.env.RESEND_API_KEY}`,
