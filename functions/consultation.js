@@ -32,7 +32,6 @@ status: 500
 });
 }
  
-return Response.redirect(
 return new Response(`
 <!DOCTYPE html>
 <html>
