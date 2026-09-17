@@ -33,7 +33,7 @@ status: 500
 }
  
 return Response.redirect(
-new URL("/thank-you.html", context.request.url),
+new URL("/consultation.html?success=true", context.request.url),
 302
 );
 }
