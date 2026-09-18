@@ -36,6 +36,7 @@ return new Response(`
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <title>Thank You</title>
 <style>
 body{
