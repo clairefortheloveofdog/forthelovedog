@@ -64,6 +64,7 @@ background:#0a7479;
 color:white;
 text-decoration:none;
 border-radius:25px;
+font-weight:bold;
 }
  
 a{
@@ -90,8 +91,10 @@ Your consultation request has been submitted successfully.
 I'll review your information and get back to you as soon as possible.
 </p>
  
-<a href="/" class>
- 
+<a href="/" class="button">
+Return Home
+</a>
+
 </div>
  
 </body>
