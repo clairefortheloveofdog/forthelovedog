@@ -55,6 +55,16 @@ padding:40px;
 border-radius:15px;
 border-left:6px solid #0a7479;
 }
+
+.button{
+display:inline-block;
+margin-top:20px;
+padding:12px 24px;
+background:#0a7479;
+color:white;
+text-decoration:none;
+border-radius:25px;
+}
  
 a{
 display:inline-block;
@@ -80,7 +90,7 @@ Your consultation request has been submitted successfully.
 I'll review your information and get back to you as soon as possible.
 </p>
  
-/Return Home</a>
+<a href="/" class>
  
 </div>
  
