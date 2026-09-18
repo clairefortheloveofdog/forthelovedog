@@ -31,9 +31,23 @@
     .alert.error { background: #f8d7da; color: #721c24; display: block; }
     .section { background: #fff; padding: 20px; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
     @media (max-width: 600px) { .row > .form-group { min-width: 100%; } }
+    .watermark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.08;
+  z-index: -1;
+  pointer-events: none;
+  max-width: 600px;
+  width: 80%;
+}
+
   </style>
 </head>
 <body>
+  <img src="/images/for-the-love-of-dog-logo.png" alt="" class="watermark">
+
   <div class="container">
     <h1>Client Information Form</h1>
     <p class="intro">Please answer the questions as thoroughly as possible. This form should be received at least a week before the training appointment. All answers are confidential and will help me serve you better.</p>
