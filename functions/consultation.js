@@ -69,7 +69,7 @@ border-radius:25px;
 <body>
  
 <div class="box">
-<h1>✅ Thank You!</h1>
+<h1>Test Success Page</h1>
  
 <p>
 Your consultation request has been submitted successfully.
