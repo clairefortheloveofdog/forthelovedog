@@ -1,486 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Client Intake Form | For the Love of Dog</title>
-
-<meta name="description"
-content="Client intake form for For the Love of Dog training services.">
-
-<style>
-
-:root{
---teal:#0a7479;
---teal-dark:#07585c;
---teal-soft:#eaf6f5;
---cream:#fffdf8;
---ink:#243233;
---line:#d8e8e6;
-}
-
-*{
-box-sizing:border-box;
-}
-
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-line-height:1.7;
-background:var(--cream);
-color:var(--ink);
-}
-
-header{
-background:white;
-box-shadow:0 2px 8px rgba(0,0,0,.08);
-}
-
-nav{
-max-width:1100px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px;
-}
-
-.logo{
-font-weight:bold;
-font-size:1.2rem;
-color:var(--teal-dark);
-}
-
-nav a{
-text-decoration:none;
-color:var(--teal-dark);
-font-weight:bold;
-margin-left:18px;
-}
-
-.hero{
-padding:60px 20px;
-text-align:center;
-background:linear-gradient(to bottom,#f3fbfa,#ffffff);
-}
-
-.hero h1{
-font-size:2.8rem;
-color:var(--teal-dark);
-}
-
-.container{
-max-width:1000px;
-margin:auto;
-padding:40px 20px;
-}
-
-.card{
-background:white;
-padding:35px;
-border-radius:20px;
-border:1px solid var(--line);
-margin-bottom:30px;
-}
-
-h2{
-color:var(--teal-dark);
-margin-top:0;
-}
-
-label{
-display:block;
-margin-top:15px;
-font-weight:bold;
-}
-
-input,
-textarea,
-select{
-width:100%;
-padding:12px;
-margin-top:5px;
-border:1px solid #ccc;
-border-radius:8px;
-font-size:1rem;
-}
-
-textarea{
-min-height:120px;
-resize:vertical;
-}
-
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px;
-}
-
-.button{
-background:var(--teal);
-color:white;
-border:none;
-padding:15px 30px;
-border-radius:30px;
-font-size:1rem;
-font-weight:bold;
-cursor:pointer;
-}
-
-.notice{
-background:var(--teal-soft);
-padding:25px;
-border-left:5px solid var(--teal);
-border-radius:10px;
-margin-bottom:30px;
-}
-
-footer{
-background:var(--teal-dark);
-color:white;
-text-align:center;
-padding:40px 20px;
-margin-top:50px;
-}
-
-@media(max-width:768px){
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.hero h1{
-font-size:2rem;
-}
-
-nav{
-flex-direction:column;
-gap:10px;
-}
-
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client Information Form - For the Love of Dog Training</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f5f0e8; color: #333; line-height: 1.6; }
+    .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+    h1 { color: #5a3a22; text-align: center; margin-bottom: 5px; font-size: 1.8em; }
+    h2 { color: #5a3a22; margin-top: 30px; margin-bottom: 10px; border-bottom: 2px solid #c4a67a; padding-bottom: 5px; font-size: 1.3em; }
+    .intro { text-align: center; margin-bottom: 20px; color: #777; font-size: 0.9em; }
+    .form-group { margin-bottom: 15px; }
+    label { display: block; font-weight: 600; margin-bottom: 4px; color: #5a3a22; }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="date"], textarea, select { width: 100%; padding: 8px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.95em; background: #fff; }
+    textarea { min-height: 60px; resize: vertical; }
+    .row { display: flex; gap: 15px; flex-wrap: wrap; }
+    .row > .form-group { flex: 1; min-width: 200px; }
+    .checkbox-group { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 5px; }
+    .checkbox-item { display: flex; align-items: center; gap: 5px; background: #fff; padding: 6px 12px; border-radius: 6px; border: 1px solid #ddd; font-size: 0.9em; cursor: pointer; }
+    .checkbox-item input { width: auto; }
+    .radio-group { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 5px; }
+    .radio-item { display: flex; align-items: center; gap: 5px; background: #fff; padding: 6px 12px; border-radius: 6px; border: 1px solid #ddd; font-size: 0.9em; cursor: pointer; }
+    .radio-item input { width: auto; }
+    .btn { display: block; width: 100%; padding: 14px; background: #5a3a22; color: #fff; border: none; border-radius: 8px; font-size: 1.1em; cursor: pointer; margin-top: 25px; transition: background 0.2s; }
+    .btn:hover { background: #3d2815; }
+    .btn:disabled { background: #999; cursor: not-allowed; }
+    .alert { padding: 12px; border-radius: 6px; margin-top: 15px; text-align: center; display: none; }
+    .alert.success { background: #d4edda; color: #155724; display: block; }
+    .alert.error { background: #f8d7da; color: #721c24; display: block; }
+    .section { background: #fff; padding: 20px; border-radius: 10px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+    @media (max-width: 600px) { .row > .form-group { min-width: 100%; } }
+  </style>
 </head>
-
 <body>
-
-<header>
-
-<nav>
-
-<div class="logo">For the Love of Dog</div>
-
-<div>
-<a href="index.html">Home</a>
-<a href="about.html">About Claire</a>
-<a href="services.html">Services & Pricing</a>
-<a href="faq.html">FAQ & Policies</a>
-<a href="consultation.html">Consultation</a>
-</div>
-
-</nav>
-
-</header>
-
-<section class="hero">
-
-<h1>Client Intake Form</h1>
-
-<p>
-Thank you for choosing For the Love of Dog.
-This form helps me better understand you, your dog,
-and your training goals before we meet.
-</p>
-
-</section>
-
-<div class="container">
-
-<div class="notice">
-
-<strong>Please complete this form at least one week before your appointment whenever possible.</strong>
-
-<p>
-All information is confidential and helps me create
-the most effective training plan for your dog.
-</p>
-
-</div>
-
-<form action="mailto:clairefortheloveofdog@gmail.com"
-method="post"
-enctype="text/plain">
-
-<div class="card">
-
-<h2>Client Information</h2>
-
-<div class="grid">
-
-<div>
-<label>Owner Name</label>
-<input type="text" name="Owner Name">
-</div>
-
-<div>
-<label>Email Address</label>
-<input type="email" name="Email">
-</div>
-
-<div>
-<label>Phone Number</label>
-<input type="tel" name="Phone">
-</div>
-
-<div>
-<label>Occupation</label>
-<input type="text" name="Occupation">
-</div>
-
-</div>
-
-<label>Address</label>
-<input type="text" name="Address">
-
-</div>
-
-<div class="card">
-
-<h2>Dog Information</h2>
-
-<div class="grid">
-
-<div>
-<label>Dog Name</label>
-<input type="text" name="Dog Name">
-</div>
-
-<div>
-<label>Breed or Mix</label>
-<input type="text" name="Breed">
-</div>
-
-<div>
-<label>Age</label>
-<input type="text" name="Age">
-</div>
-
-<div>
-<label>Weight</label>
-<input type="text" name="Weight">
-</div>
-
-</div>
-
-<label>Sex / Altered Status</label>
-<input type="text" name="Sex and Altered Status">
-
-<label>How long have you had your dog?</label>
-<input type="text" name="Length of Ownership">
-
-<label>Where did you obtain your dog?</label>
-<input type="text" name="Source">
-
-<label>Why did you get your dog?</label>
-<textarea name="Reason for Getting Dog"></textarea>
-
-</div>
-
-<div class="card">
-
-<h2>Medical History</h2>
-
-<label>Veterinarian Name</label>
-<input type="text" name="Veterinarian">
-
-<label>Current Medical Conditions</label>
-<textarea name="Medical Conditions"></textarea>
-
-<label>Current Medications</label>
-<textarea name="Medications"></textarea>
-
-<label>Known Allergies</label>
-<textarea name="Allergies"></textarea>
-
-<label>
-Anything medically important that may affect training?
-</label>
-
-<textarea name="Medical Notes"></textarea>
-
-</div>
-
-<div class="card">
-
-<h2>Daily Life</h2>
-
-<label>Describe your dog's diet</label>
-<textarea name="Diet"></textarea>
-
-<label>Exercise Routine</label>
-<textarea name="Exercise"></textarea>
-
-<label>Favorite Treats or Rewards</label>
-<textarea name="Favorite Rewards"></textarea>
-
-<label>Favorite Activities</label>
-<textarea name="Favorite Activities"></textarea>
-
-</div>
-
-<div class="card">
-
-<h2>Home Environment</h2>
-
-<label>
-Who lives in your household?
-</label>
-
-<textarea name="Household Members"></textarea>
-
-<label>
-Other Pets in the Home
-</label>
-
-<textarea name="Other Pets"></textarea>
-
-<label>
-Where does your dog spend time when you're away?
-</label>
-
-<textarea name="Home Alone Situation"></textarea>
-
-<label>
-Where does your dog sleep?
-</label>
-
-<input type="text" name="Sleep Location">
-
-</div>
-
-<div class="card">
-
-<h2>Training History</h2>
-
-<label>
-Previous Training Classes, Programs, or Trainers
-</label>
-
-<textarea name="Training History"></textarea>
-
-<label>
-What training methods have you used?
-</label>
-
-<textarea name="Training Methods"></textarea>
-
-<label>
-What equipment do you currently use?
-</label>
-
-<textarea
-name="Equipment"
-placeholder="Flat collar, harness, long line, prong collar, etc."></textarea>
-
-</div>
-
-<div class="card">
-
-<h2>Behavior Information</h2>
-
-<label>
-What behaviors concern you most?
-</label>
-
-<textarea name="Behavior Concerns"></textarea>
-
-<label>
-Has your dog ever bitten a person?
-</label>
-
-<select name="Bitten Person">
-<option>No</option>
-<option>Yes</option>
-</select>
-
-<label>
-Has your dog ever bitten another animal?
-</label>
-
-<select name="Bitten Animal">
-<option>No</option>
-<option>Yes</option>
-</select>
-
-<label>
-Please describe any bite or aggressive incidents.
-</label>
-
-<textarea name="Aggression Details"></textarea>
-
-<label>
-What is your dog's reaction to unfamiliar people?
-</label>
-
-<textarea name="Stranger Response"></textarea>
-
-</div>
-
-<div class="card">
-
-<h2>Goals</h2>
-
-<label>
-What are five things you love about your dog?
-</label>
-
-<textarea name="Things You Love"></textarea>
-
-<label>
-What are five things you would like to improve?
-</label>
-
-<textarea name="Changes Desired"></textarea>
-
-<label>
-What would success look like for you and your dog?
-</label>
-
-<textarea name="Training Goals"></textarea>
-
-<label>
-Anything else I should know?
-</label>
-
-<textarea name="Additional Information"></textarea>
-
-</div>
-
-<button type="submit" class="button">
-
-Submit Intake Form
-
-</button>
-
-</form>
-
-</div>
-
-<footer>
-
-<p><strong>For the Love of Dog</strong></p>
-
-<p>
-Virtual Training Nationwide • In-Person Services in Lynchburg, Virginia
-</p>
-
-<p>
-clairefortheloveofdog@gmail.com
-</p>
-
-</footer>
-
+  <div class="container">
+    <h1>Client Information Form</h1>
+    <p class="intro">Please answer the questions as thoroughly as possible. This form should be received at least a week before the training appointment. All answers are confidential and will help me serve you better.</p>
+    <form id="intakeForm">
+      <div class="section">
+        <h2>Client Information</h2>
+        <div class="form-group"><label>Date</label><input type="date" name="date"></div>
+        <div class="row">
+          <div class="form-group"><label>Owner's Name *</label><input type="text" name="owner_name" required></div>
+          <div class="form-group"><label>Dog's Name *</label><input type="text" name="dog_name" required></div>
+        </div>
+        <div class="row">
+          <div class="form-group"><label>Address</label><input type="text" name="address"></div>
+          <div class="form-group"><label>Breed/Mix</label><input type="text" name="breed_mix"></div>
+        </div>
+        <div class="row">
+          <div class="form-group"><label>D.O.B. or Age</label><input type="text" name="dob_age"></div>
+          <div class="form-group"><label>Weight</label><input type="text" name="weight"></div>
+          <div class="form-group"><label>Color/Unique Markings</label><input type="text" name="color_markings"></div>
+        </div>
+        <div class="row">
+          <div class="form-group"><label>City</label><input type="text" name="city"></div>
+          <div class="form-group"><label>State</label><input type="text" name="state"></div>
+          <div class="form-group"><label>Zip</label><input type="text" name="zip"></div>
+        </div>
+        <div class="row">
+          <div class="form-group"><label>Home Phone</label><input type="tel" name="home_phone"></div>
+          <div class="form-group"><label>Work Phone</label><input type="tel" name="work_phone"></div>
+          <div class="form-group"><label>Cell Phone</label><input type="tel" name="cell_phone"></div>
+        </div>
+        <div class="row">
+          <div class="form-group"><label>Email *</label><input type="email" name="email" required></div>
+          <div class="form-group"><label>Occupation</label><input type="text" name="occupation"></div>
+        </div>
+        <div class="row">
+          <div class="form-group"><label>Sex</label><div class="radio-group"><label class="radio-item"><input type="radio" name="sex" value="Male"> Male</label><label class="radio-item"><input type="radio" name="sex" value="Female"> Female</label></div></div>
+          <div class="form-group"><label>Spay/Neuter Status</label><div class="radio-group"><label class="radio-item"><input type="radio" name="spay_neuter_status" value="Intact"> Intact</label><label class="radio-item"><input type="radio" name="spay_neuter_status" value="Neutered/Spayed"> Neutered/Spayed</label></div></div>
+          <div class="form-group"><label>If spayed/neutered, at what age?</label><input type="text" name="spay_neuter_age"></div>
+        </div>
+        <div class="row">
+          <div class="form-group"><label>Housing Type</label><div class="checkbox-group"><label class="checkbox-item"><input type="checkbox" name="housing_type" value="House"> House</label><label class="checkbox-item"><input type="checkbox" name="housing_type" value="Townhome"> Townhome</label><label class="checkbox-item"><input type="checkbox" name="housing_type" value="Apartment"> Apartment</label><label class="checkbox-item"><input type="checkbox" name="housing_type" value="Other"> Other</label></div></div>
+          <div class="form-group"><label>Fenced Yard?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="fenced_yard" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="fenced_yard" value="No"> No</label></div></div>
+          <div class="form-group"><label>Invisible Fence?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="invisible_fence" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="invisible_fence" value="No"> No</label></div></div>
+        </div>
+      </div>
+      <div class="section">
+        <h2>How did you hear about us?</h2>
+        <div class="form-group"><label>Referral Source</label><div class="checkbox-group"><label class="checkbox-item"><input type="checkbox" name="referral_source" value="Veterinarian"> Veterinarian</label><label class="checkbox-item"><input type="checkbox" name="referral_source" value="Former client"> Former client</label><label class="checkbox-item"><input type="checkbox" name="referral_source" value="Advertisement"> Advertisement</label><label class="checkbox-item"><input type="checkbox" name="referral_source" value="Breeder"> Breeder</label><label class="checkbox-item"><input type="checkbox" name="referral_source" value="Rescue/Shelter"> Rescue/Shelter</label><label class="checkbox-item"><input type="checkbox" name="referral_source" value="Pet-related business"> Pet-related business</label><label class="checkbox-item"><input type="checkbox" name="referral_source" value="Internet"> Internet</label><label class="checkbox-item"><input type="checkbox" name="referral_source" value="Website"> Website</label><label class="checkbox-item"><input type="checkbox" name="referral_source" value="Facebook"> Facebook</label><label class="checkbox-item"><input type="checkbox" name="referral_source" value="Twitter"> Twitter</label><label class="checkbox-item"><input type="checkbox" name="referral_source" value="Other"> Other</label></div></div>
+        <div class="form-group"><label>Name of referring individual, organization or publication</label><input type="text" name="referral_name"></div>
+      </div>
+      <div class="section">
+        <h2>About Your Dog</h2>
+        <div class="form-group"><label>Where did you obtain your dog?</label><div class="checkbox-group"><label class="checkbox-item"><input type="checkbox" name="dog_obtained_from" value="Breeder"> Breeder</label><label class="checkbox-item"><input type="checkbox" name="dog_obtained_from" value="Individual"> Individual</label><label class="checkbox-item"><input type="checkbox" name="dog_obtained_from" value="Shelter"> Shelter</label><label class="checkbox-item"><input type="checkbox" name="dog_obtained_from" value="Rescue Group"> Rescue Group</label><label class="checkbox-item"><input type="checkbox" name="dog_obtained_from" value="Pet Store"> Pet Store</label><label class="checkbox-item"><input type="checkbox" name="dog_obtained_from" value="Friend/Relative"> Friend/Relative</label><label class="checkbox-item"><input type="checkbox" name="dog_obtained_from" value="Found stray"> Found stray</label><label class="checkbox-item"><input type="checkbox" name="dog_obtained_from" value="Other"> Other</label></div></div>
+        <div class="form-group"><label>If adopted from shelter/rescue/pet store, please provide the name</label><input type="text" name="shelter_rescue_name"></div>
+        <div class="row">
+          <div class="form-group"><label>How long have you had your dog?</label><input type="text" name="time_owned"></div>
+          <div class="form-group"><label>Were there previous owner(s)?</label><input type="text" name="previous_owners"></div>
+        </div>
+        <div class="form-group"><label>If yes, why was the dog given up?</label><textarea name="previous_owner_reason"></textarea></div>
+        <div class="form-group"><label>Type of ID</label><div class="checkbox-group"><label class="checkbox-item"><input type="checkbox" name="id_type" value="Microchip"> Microchip</label><label class="checkbox-item"><input type="checkbox" name="id_type" value="Rabies/License Tag"> Rabies/License Tag</label><label class="checkbox-item"><input type="checkbox" name="id_type" value="Name Tag"> Name Tag</label><label class="checkbox-item"><input type="checkbox" name="id_type" value="Tattoo"> Tattoo</label><label class="checkbox-item"><input type="checkbox" name="id_type" value="Other"> Other</label></div></div>
+        <div class="form-group"><label>Why did you get your dog? (check all that apply)</label><div class="checkbox-group"><label class="checkbox-item"><input type="checkbox" name="reason_for_dog" value="Companionship"> Companionship</label><label class="checkbox-item"><input type="checkbox" name="reason_for_dog" value="For the kids"> For the kids</label><label class="checkbox-item"><input type="checkbox" name="reason_for_dog" value="For protection"> For protection</label><label class="checkbox-item"><input type="checkbox" name="reason_for_dog" value="To breed"> To breed</label><label class="checkbox-item"><input type="checkbox" name="reason_for_dog" value="Received as gift"> Received as gift</label><label class="checkbox-item"><input type="checkbox" name="reason_for_dog" value="Sports/Work"> Sports/Work</label><label class="checkbox-item"><input type="checkbox" name="reason_for_dog" value="Assistance/Service/Therapy/ESA"> Assistance/Service/Therapy/ESA</label><label class="checkbox-item"><input type="checkbox" name="reason_for_dog" value="Companion for other dog"> Companion for other dog</label><label class="checkbox-item"><input type="checkbox" name="reason_for_dog" value="Other"> Other</label></div></div>
+        <div class="row">
+          <div class="form-group"><label>Have you owned other dogs in the past?</label><input type="text" name="owned_dogs_before"></div>
+          <div class="form-group"><label>If yes, what breed(s)?</label><input type="text" name="previous_dog_breeds"></div>
+        </div>
+        <div class="form-group"><label>Physical/breed characteristics that contributed to your choice</label><textarea name="breed_characteristics_choice"></textarea></div>
+      </div>
+            <div class="section">
+        <h2>Medical Information & History</h2>
+        <div class="row">
+          <div class="form-group"><label>Veterinarian's Name</label><input type="text" name="vet_name"></div>
+          <div class="form-group"><label>Vet City</label><input type="text" name="vet_city"></div>
+        </div>
+        <div class="row">
+          <div class="form-group"><label>Month/Year of Last Visit</label><input type="text" name="last_vet_visit" placeholder="e.g., 03/2025"></div>
+          <div class="form-group"><label>Reason for Last Visit</label><input type="text" name="last_vet_reason"></div>
+        </div>
+        <div class="row">
+          <div class="form-group"><label>Date Last Vaccinated</label><input type="text" name="last_vaccination_date" placeholder="e.g., 03/2025"></div>
+          <div class="form-group"><label>Vaccine(s) Given</label><input type="text" name="vaccines_given"></div>
+        </div>
+        <div class="form-group"><label>Current Health Problems/Medications</label><textarea name="current_health_problems"></textarea></div>
+        <div class="form-group"><label>Past Medical Conditions/Treatment</label><textarea name="past_medical_conditions"></textarea></div>
+        <div class="form-group"><label>Allergies (including food allergies)</label><textarea name="allergies"></textarea></div>
+        <div class="row">
+          <div class="form-group"><label>Is your dog easily handled by vet staff?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="vet_handling_easy" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="vet_handling_easy" value="No"> No</label></div></div>
+          <div class="form-group"><label>Has your dog ever been muzzled?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="ever_muzzled" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="ever_muzzled" value="No"> No</label></div></div>
+        </div>
+        <div class="row">
+          <div class="form-group"><label>Heartworm Preventative?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="heartworm_preventative" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="heartworm_preventative" value="No"> No</label></div></div>
+          <div class="form-group"><label>Heartworm Brand</label><input type="text" name="heartworm_brand"></div>
+        </div>
+        <div class="row">
+          <div class="form-group"><label>Flea/Tick Preventative?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="flea_tick_preventative" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="flea_tick_preventative" value="No"> No</label></div></div>
+          <div class="form-group"><label>Flea/Tick Brand</label><input type="text" name="flea_tick_brand"></div>
+        </div>
+        <div class="row">
+          <div class="form-group"><label>May we contact your vet about health/behavioral issues?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="vet_contact_permission" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="vet_contact_permission" value="No"> No</label></div></div>
+          <div class="form-group"><label>If yes, please initial</label><input type="text" name="vet_contact_initials"></div>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Diet and Elimination</h2>
+        <div class="row">
+          <div class="form-group"><label>Type of Food (raw, dry kibble, canned, etc.)</label><input type="text" name="food_type"></div>
+          <div class="form-group"><label>How Often?</label><input type="text" name="food_frequency"></div>
+          <div class="form-group"><label>How Much?</label><input type="text" name="food_amount"></div>
+        </div>
+        <div class="form-group"><label>At approximately what times?</label><input type="text" name="food_times"></div>
+        <div class="row">
+          <div class="form-group"><label>Does your dog finish all food at meals?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="finishes_food" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="finishes_food" value="No"> No</label></div></div>
+          <div class="form-group"><label>If not, how long is food left down?</label><input type="text" name="food_left_down_duration"></div>
+        </div>
+        <div class="row">
+          <div class="form-group"><label>Does your dog receive treats/chewies?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="receives_treats" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="receives_treats" value="No"> No</label></div></div>
+          <div class="form-group"><label>Frequency/Type</label><input type="text" name="treat_frequency_type"></div>
+        </div>
+        <div class="form-group"><label>3 of your dog's favorite foods/treats</label><input type="text" name="favorite_treats"></div>
+        <div class="row">
+          <div class="form-group"><label>Has your dog been possessive of food/treats?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="food_possessive" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="food_possessive" value="No"> No</label></div></div>
+        </div>
+        <div class="form-group"><label>If yes, please describe in detail</label><textarea name="food_possessive_description"></textarea></div>
+        <div class="form-group"><label>Is your dog reliably housetrained?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="housetrained" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="housetrained" value="Mostly"> Mostly (infrequent accidents)</label><label class="radio-item"><input type="radio" name="housetrained" value="No"> No</label></div></div>
+        <div class="row">
+          <div class="form-group"><label>Crate Trained?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="crate_trained" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="crate_trained" value="No"> No</label></div></div>
+          <div class="form-group"><label>Paper/Pad Trained?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="paper_trained" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="paper_trained" value="No"> No</label></div></div>
+          <div class="form-group"><label>Litter Box Trained?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="litter_trained" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="litter_trained" value="No"> No</label></div></div>
+        </div>
+        <div class="row">
+          <div class="form-group"><label>Dog Door?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="has_dog_door" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="has_dog_door" value="No"> No</label></div></div>
+          <div class="form-group"><label>Times daily let out/walked to eliminate (when home)</label><input type="text" name="elimination_frequency"></div>
+          <div class="form-group"><label>Times per day dog normally defecates</label><input type="text" name="defecation_frequency"></div>
+        </div>
+      </div>
+      <div class="section">
+        <h2>Exercise</h2>
+        <div class="form-group"><label>Type of exercise (if none, note "none" and reason)</label><textarea name="exercise_type"></textarea></div>
+        <div class="form-group"><label>How long/how often? (e.g., "15-minute walk 3x daily")</label><input type="text" name="exercise_duration_frequency"></div>
+        <div class="form-group"><label>Who is normally responsible for exercising your dog?</label><input type="text" name="exercise_responsible_person"></div>
+        <div class="form-group"><label>Collar and leash type used on walks</label><textarea name="collar_leash_type"></textarea></div>
+        <div class="form-group"><label>Does your dog become reactive toward dogs or people on walks?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="reactive_on_walks" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="reactive_on_walks" value="No"> No</label></div></div>
+        <div class="form-group"><label>If so, please describe</label><textarea name="reactivity_description"></textarea></div>
+      </div>
+      <div class="section">
+        <h2>Environment & Lifestyle</h2>
+        <div class="form-group"><label>Household Members (name, gender, age, relationship to you)</label><textarea name="household_members" placeholder="Name / Gender / Age / Relationship&#10;Name / Gender / Age / Relationship"></textarea></div>
+        <div class="form-group"><label>Who will be responsible for practicing training exercises?</label><input type="text" name="training_responsible_person"></div>
+        <div class="form-group"><label>Does the dog "belong to" a particular member or everyone?</label><input type="text" name="dog_belongs_to"></div>
+        <div class="form-group"><label>Does any household member dislike the dog? Why?</label><textarea name="household_member_dislikes"></textarea></div>
+        <div class="form-group"><label>Is any household member frightened of the dog? Why?</label><textarea name="household_member_frightened"></textarea></div>
+        <div class="form-group"><label>Is the dog frightened of any household member? Why?</label><textarea name="dog_frightened_of_member"></textarea></div>
+        <div class="form-group"><label>Where is your dog kept when you are NOT at home?</label><div class="checkbox-group"><label class="checkbox-item"><input type="checkbox" name="dog_when_not_home" value="Indoors not confined"> Indoors not confined</label><label class="checkbox-item"><input type="checkbox" name="dog_when_not_home" value="Indoors confined"> Indoors confined</label><label class="checkbox-item"><input type="checkbox" name="dog_when_not_home" value="In yard not confined"> In yard not confined</label><label class="checkbox-item"><input type="checkbox" name="dog_when_not_home" value="In yard confined to dog run"> In yard confined to dog run</label><label class="checkbox-item"><input type="checkbox" name="dog_when_not_home" value="In yard tied out"> In yard tied out</label><label class="checkbox-item"><input type="checkbox" name="dog_when_not_home" value="Other"> Other</label></div></div>
+        <div class="form-group"><label>If confined indoors, how?</label><input type="text" name="dog_when_not_home_detail"></div>
+        <div class="row">
+          <div class="form-group"><label>When home, is your dog allowed in the house?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="dog_allowed_indoors" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="dog_allowed_indoors" value="No"> No</label></div></div>
+          <div class="form-group"><label>Ever confined (crated/penned) while you're home?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="confined_when_home" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="confined_when_home" value="No"> No</label></div></div>
+        </div>
+        <div class="row">
+          <div class="form-group"><label>If confined, how?</label><input type="text" name="confinement_method"></div>
+          <div class="form-group"><label>How long confined on average day?</label><input type="text" name="confinement_duration"></div>
+          <div class="form-group"><label>Reason for confinement</label><input type="text" name="confinement_reason"></div>
+        </div>
+        <div class="form-group"><label>If dog not allowed indoors, why not?</label><div class="checkbox-group"><label class="checkbox-item"><input type="checkbox" name="not_indoors_reason" value="Allergies"> Allergies</label><label class="checkbox-item"><input type="checkbox" name="not_indoors_reason" value="Cleanliness"> Cleanliness</label><label class="checkbox-item"><input type="checkbox" name="not_indoors_reason" value="Not housetrained"> Not housetrained</label><label class="checkbox-item"><input type="checkbox" name="not_indoors_reason" value="We prefer it"> We prefer it</label><label class="checkbox-item"><input type="checkbox" name="not_indoors_reason" value="Destructive"> Destructive</label><label class="checkbox-item"><input type="checkbox" name="not_indoors_reason" value="Other"> Other</label></div></div>
+        <div class="row">
+          <div class="form-group"><label>If outdoor dog, would you like him indoors eventually?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="outdoor_dog_wants_indoors" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="outdoor_dog_wants_indoors" value="No"> No</label></div></div>
+        </div>
+        <div class="row">
+          <div class="form-group"><label>Where does your dog sleep at night?</label><input type="text" name="sleeps_where"></div>
+          <div class="form-group"><label>In a crate?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="sleeps_in_crate" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="sleeps_in_crate" value="No"> No</label></div></div>
+        </div>
+        <div class="form-group"><label>Hours per day without human companionship</label><input type="text" name="hours_without_companionship"></div>
+        <div class="form-group"><label>Other pets? (kind, breed, age, sex, neutered)</label><textarea name="other_pets"></textarea></div>
+        <div class="form-group"><label>How does your dog get along with other pets?</label><textarea name="gets_along_with_other_pets"></textarea></div>
+        <div class="row">
+          <div class="form-group"><label>Does your dog play with toys/games?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="plays_with_toys" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="plays_with_toys" value="No"> No</label></div></div>
+        </div>
+        <div class="form-group"><label>Favorite toys/games</label><textarea name="favorite_toys_games"></textarea></div>
+        <div class="form-group"><label>Other activities your dog enjoys</label><textarea name="other_activities"></textarea></div>
+        <div class="form-group"><label>Five things you LIKE about your dog</label><textarea name="five_things_liked"></textarea></div>
+        <div class="form-group"><label>Five things you would change about your dog</label><textarea name="five_things_to_change"></textarea></div>
+      </div>
+      <div class="section">
+        <h2>Training History</h2>
+        <div class="form-group"><label>Previous training history</label><textarea name="training_history"></textarea></div>
+        <div class="row">
+          <div class="form-group"><label>Group class completed?</label><input type="text" name="group_class_completed"></div>
+          <div class="form-group"><label>Private lessons?</label><input type="text" name="private_lessons"></div>
+        </div>
+        <div class="row">
+          <div class="form-group"><label>Sent to trainer/boarded?</label><input type="text" name="sent_to_trainer"></div>
+          <div class="form-group"><label>Trainer name/organization</label><input type="text" name="trainer_name_org"></div>
+        </div>
+        <div class="form-group"><label>Training methods used</label><textarea name="training_methods"></textarea></div>
+        <div class="form-group"><label>Behaviors your dog knows</label><textarea name="known_behaviors"></textarea></div>
+        <div class="form-group"><label>Behaviors your dog performs reliably (% of the time)</label><textarea name="behavior_percentages"></textarea></div>
+      </div>
+      <div class="section">
+       <h2>Behavioral Issues</h2>
+        <div class="form-group"><label>Behavioral issues you are concerned about</label><div class="checkbox-group"><label class="checkbox-item"><input type="checkbox" name="behavioral_issues" value="Barking"> Barking</label><label class="checkbox-item"><input type="checkbox" name="behavioral_issues" value="Chewing"> Chewing</label><label class="checkbox-item"><input type="checkbox" name="behavioral_issues" value="Digging"> Digging</label><label class="checkbox-item"><input type="checkbox" name="behavioral_issues" value="Jumping"> Jumping</label><label class="checkbox-item"><input type="checkbox" name="behavioral_issues" value="Biting/Nipping"> Biting/Nipping</label><label class="checkbox-item"><input type="checkbox" name="behavioral_issues" value="House soiling"> House soiling</label><label class="checkbox-item"><input type="checkbox" name="behavioral_issues" value="Pulling on leash"> Pulling on leash</label><label class="checkbox-item"><input type="checkbox" name="behavioral_issues" value="Not coming when called"> Not coming when called</label><label class="checkbox-item"><input type="checkbox" name="behavioral_issues" value="Aggression toward people"> Aggression toward people</label><label class="checkbox-item"><input type="checkbox" name="behavioral_issues" value="Aggression toward dogs"> Aggression toward dogs</label><label class="checkbox-item"><input type="checkbox" name="behavioral_issues" value="Separation anxiety"> Separation anxiety</label><label class="checkbox-item"><input type="checkbox" name="behavioral_issues" value="Fearfulness"> Fearfulness</label><label class="checkbox-item"><input type="checkbox" name="behavioral_issues" value="Resource guarding"> Resource guarding</label><label class="checkbox-item"><input type="checkbox" name="behavioral_issues" value="Other"> Other</label></div></div>
+        <div class="form-group"><label>Please describe the behavioral issues in detail</label><textarea name="behavioral_issues_description"></textarea></div>
+        <div class="form-group"><label>What procedures have you tried to correct these behaviors?</label><textarea name="correction_procedures"></textarea></div>
+      </div>
+      <div class="section">
+        <h2>Biting & Aggression History</h2>
+        <div class="row">
+          <div class="form-group"><label>Has your dog ever bitten a person?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="has_bitten_person" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="has_bitten_person" value="No"> No</label></div></div>
+          <div class="form-group"><label>Has your dog ever bitten another animal?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="has_bitten_animal" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="has_bitten_animal" value="No"> No</label></div></div>
+        </div>
+        <div class="form-group"><label>If yes, please describe the bite incident(s) in detail</label><textarea name="bite_description"></textarea></div>
+        <div class="row">
+          <div class="form-group"><label>Did any bite require medical attention?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="medical_attention_needed" value="Yes"> Yes</label><label class="radio-item"><input type="radio" name="medical_attention_needed" value="No"> No</label></div></div>
+          <div class="form-group"><label>If yes, please explain</label><input type="text" name="medical_attention_explanation"></div>
+        </div>
+        <div class="form-group"><label>How does your dog react to strangers visiting your home?</label><textarea name="reaction_to_stranger"></textarea></div>
+        <div class="form-group"><label>When was the last time a stranger visited your home?</label><input type="text" name="last_stranger_visit"></div>
+      </div>
+      <div class="section">
+        <h2>Training Goals</h2>
+        <div class="form-group"><label>What do you hope to accomplish with training? What would you like help with?</label><textarea name="help_requested" style="min-height: 100px;"></textarea></div>
+        <div class="form-group"><label>Any additional information you'd like to share</label><textarea name="additional_info" style="min-height: 80px;"></textarea></div>
+      </div>
+      <button type="submit" class="btn" id="submitBtn">Submit Intake Form</button>
+      <div class="alert" id="alertMsg"></div>
+    </form>
+  </div>
+  <script>
+    function collectCheckboxes(form) {
+      const data = {};
+      const checkboxGroups = {};
+      const formData = new FormData(form);
+      for (const [key, value] of formData.entries()) {
+        const inputs = form.querySelectorAll(`input[name="${key}"][type="checkbox"]`);
+        if (inputs.length > 1) {
+          if (!checkboxGroups[key]) checkboxGroups[key] = [];
+          checkboxGroups[key].push(value);
+        } else {
+          data[key] = value;
+        }
+      }
+      for (const [key, values] of Object.entries(checkboxGroups)) {
+        data[key] = values.join(", ");
+      }
+      return data;
+    }
+    document.getElementById('intakeForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const alertMsg = document.getElementById('alertMsg');
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+      alertMsg.className = 'alert';
+      const data = collectCheckboxes(e.target);
+      try {
+        const res = await fetch('/api/intake', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const result = await res.json();
+        if (res.ok) {
+          alertMsg.className = 'alert success';
+          alertMsg.textContent = 'Thank you! Your detailed intake form has been submitted successfully.';
+          btn.textContent = 'Submitted!';
+          e.target.reset();
+          setTimeout(() => { window.location.href = '/thank-you.html'; }, 2000);
+        } else {
+          throw new Error(result.error || 'Submission failed');
+        }
+      } catch (err) {
+        alertMsg.className = 'alert error';
+        alertMsg.textContent = 'Error: ' + err.message + '. Please try again or contact us directly.';
+        btn.disabled = false;
+        btn.textContent = 'Submit Intake Form';
+      }
+    });
+  </script>
 </body>
 </html>
